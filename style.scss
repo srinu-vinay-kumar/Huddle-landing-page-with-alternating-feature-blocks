@@ -1,0 +1,426 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+$pink: #ff52bf;
+$pale-cyan: #ebfbff;
+$dark-cyan: #00252e;
+$gray-blue: #808d99;
+
+$poppins600: 600;
+
+$open-sans400: 400;
+$open-sans700: 700;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+  margin: 0;
+}
+
+body {
+  /* 3. Add accessible line-height */
+  line-height: 1.5;
+  /* 4. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 5. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 6. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 7. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* 8. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+html {
+  width: fit-content;
+}
+body {
+  font-family: "Open Sans", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+  font-size: 18px;
+  width: 100%;
+  h1,
+  h2 {
+    font-family: "Poppins", serif;
+    font-weight: 600;
+    font-style: normal;
+    color: $dark-cyan;
+  }
+  header {
+    background: url(./images/bg-hero-desktop.svg) no-repeat $pale-cyan;
+    padding: 6vh 4vw;
+    nav {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 6vh;
+      img {
+        width: 20%;
+        height: 20%;
+      }
+      .try-btn {
+        background-color: white;
+        color: $dark-cyan;
+        border: none;
+        padding: 1vh 2.5vw;
+        border-radius: 1.5rem;
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+        color: $dark-cyan;
+        font-weight: $open-sans700;
+        &:hover {
+          color: $gray-blue;
+          cursor: pointer;
+        }
+      }
+    }
+    .hero {
+      display: flex;
+      align-items: center;
+
+      .hero-text {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        gap: 5vh;
+        flex-basis: 50%;
+        button {
+          background-color: $pink;
+          color: $pale-cyan;
+          border: none;
+          padding: 2vh 3vw;
+          border-radius: 1.5rem;
+          &:hover {
+            background-color: hsl(322, 100%, 75%);
+            cursor: pointer;
+          }
+        }
+      }
+      img {
+        width: 50%;
+        height: auto;
+        flex-basis: 50%;
+      }
+    }
+  }
+  main {
+    margin-top: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6vh;
+    justify-content: space-evenly;
+    section {
+      background-color: white;
+      box-shadow: 0px 4px 45px rgba(0, 0, 0, 0.1);
+      display: flex;
+      width: 90%;
+      height: 50vh;
+      border-radius: 1rem;
+      align-items: center;
+      padding: 3vh 2vw;
+      justify-content: space-between;
+      flex: 1;
+      aside {
+        padding: 3vh 5vw;
+        flex-basis: 60%;
+      }
+      img {
+        width: 25%;
+        height: auto;
+        flex-basis: 40%;
+      }
+    }
+    section:nth-child(2) {
+      flex-direction: row-reverse;
+    }
+    .last-child {
+      width: 50%;
+      height: 30vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      position: relative;
+      gap: 4vh;
+      top: 70px;
+      z-index: 1;
+
+      button {
+        background-color: $pink;
+        color: $pale-cyan;
+        border: none;
+        border-radius: 1.5rem;
+        padding: 2vh 5vw;
+
+        &:hover {
+          background-color: hsl(322, 100%, 75%);
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  footer {
+    background-color: $dark-cyan;
+    color: $pale-cyan;
+    height: max-content;
+    padding: 19vh 8vw 3vh;
+    position: absolute;
+    width: 100%;
+    .main {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      gap: 2vw;
+      padding: 6vh 0 6vh;
+      align-items: center;
+      div:nth-child(1) {
+        display: flex;
+        flex-direction: column;
+        width: 40%;
+        height: 100%;
+        gap: 2vh;
+        small:nth-child(1) {
+          display: flex;
+          align-items: baseline;
+          &::before {
+            content: "";
+            display: inline-block;
+            width: 1rem;
+            height: 1rem;
+            margin-right: 1vw;
+            background: center / cover no-repeat url(./images/icon-location.svg);
+            vertical-align: bottom;
+            object-fit: cover;
+          }
+        }
+        small:nth-child(2) {
+          &::before {
+            content: "";
+            display: inline-block;
+            width: 1rem;
+            height: 1rem;
+            margin-right: 1vw;
+            background: center / cover no-repeat url(./images/icon-phone.svg);
+            vertical-align: middle;
+            object-fit: cover;
+          }
+        }
+        small:nth-child(3) {
+          &::before {
+            content: "";
+            display: inline-block;
+            width: 1rem;
+            height: 1rem;
+            margin-right: 1vw;
+            background: center / cover no-repeat url(./images/icon-email.svg);
+            vertical-align: middle;
+            object-fit: cover;
+          }
+        }
+      }
+      div:nth-child(2) {
+        p {
+          &:hover {
+            text-decoration: underline;
+            cursor: pointer;
+          }
+        }
+      }
+      .icon {
+        display: flex;
+        gap: 1vw;
+        svg {
+          width: 3rem;
+          height: auto;
+          &:hover {
+            cursor: pointer;
+          }
+        }
+      }
+      svg:first-of-type:hover circle,
+      svg:first-of-type:hover path {
+        stroke: $pink;
+      }
+      svg:first-of-type:hover path {
+        fill: $pink;
+      }
+
+      svg:nth-of-type(2):hover circle,
+      svg:nth-of-type(2):hover rect {
+        stroke: $pink;
+      }
+
+      svg:nth-of-type(2):hover circle:nth-of-type(3) {
+        fill: none;
+      }
+
+      svg:nth-of-type(3):hover g {
+        stroke: $pink;
+        fill: $pink;
+      }
+      svg:nth-of-type(3):hover g path {
+        fill: $pink;
+      }
+
+      svg:nth-of-type(3):hover g circle {
+        fill: none;
+      }
+    }
+    .copyright {
+      text-align: end;
+      font-size: small;
+    }
+    .attribution {
+      text-align: center;
+      margin-top: 3vh;
+      a {
+        color: $gray-blue;
+        text-decoration: none;
+      }
+    }
+  }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  body {
+    header {
+      nav {
+        img {
+          width: 25%;
+          height: 25%;
+        }
+      }
+    }
+    main {
+      .last-child {
+        width: 75%;
+        padding: 3vw;
+      }
+    }
+  }
+}
+
+@media (min-width: 577px) and (max-width: 768px) {
+  body {
+    header {
+      nav {
+        img {
+          width: 30%;
+          height: 30%;
+        }
+      }
+    }
+    main {
+      .last-child {
+        width: max-content;
+        padding: 5vh 4vw;
+      }
+    }
+    footer {
+      padding: 40vh 6vw 10vh;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  body {
+    max-width: 100%;
+    header {
+      nav {
+        align-items: center;
+        img {
+          width: 40%;
+          height: 40%;
+        }
+      }
+      .hero {
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        text-align: center;
+        gap: 4vh;
+        .hero-text {
+          .get-free-btn {
+            align-self: center;
+          }
+        }
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+    main {
+      section {
+        flex-direction: column-reverse;
+        aside {
+          flex-basis: 45%;
+        }
+        img {
+          flex-basis: 55%;
+          width: 70%;
+          height: auto;
+        }
+      }
+      section:nth-child(2) {
+        flex-direction: column-reverse;
+      }
+      .last-child {
+        width: fit-content;
+        padding: 2vh 3vw;
+      }
+    }
+    footer {
+      width: 100%;
+      .main {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        .icon {
+          align-self: center;
+        }
+      }
+      .copyright {
+        text-align: center;
+      }
+    }
+  }
+}
